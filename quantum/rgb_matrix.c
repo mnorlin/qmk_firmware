@@ -525,3 +525,15 @@ void rgb_matrix_sethsv_noeeprom(uint16_t hue, uint8_t sat, uint8_t val) {
     rgb_matrix_config.hsv.v = val;
     if (rgb_matrix_config.hsv.v > RGB_MATRIX_MAXIMUM_BRIGHTNESS) rgb_matrix_config.hsv.v = RGB_MATRIX_MAXIMUM_BRIGHTNESS;
 }
+
+// MMX
+void rgb_matrix_set_sat(uint8_t sat) {
+    rgb_matrix_sethsv_noeeprom(rgb_matrix_config.hsv.h, sat, rgb_matrix_config.hsv.v);
+}
+void rgb_matrix_set_val(uint8_t val) {
+    rgb_matrix_sethsv_noeeprom(rgb_matrix_config.hsv.h, rgb_matrix_config.hsv.s, val);
+}
+uint16_t rgb_matrix_get_hue(void) { return rgb_matrix_config.hsv.h; }
+void rgb_matrix_set_hue(uint16_t hue) {
+    rgb_matrix_sethsv_noeeprom(hue, rgb_matrix_config.hsv.s, rgb_matrix_config.hsv.v);
+}

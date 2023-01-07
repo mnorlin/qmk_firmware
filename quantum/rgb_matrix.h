@@ -127,6 +127,12 @@ uint8_t     rgb_matrix_get_mode(void);
 void        rgb_matrix_sethsv(uint16_t hue, uint8_t sat, uint8_t val);
 void        rgb_matrix_sethsv_noeeprom(uint16_t hue, uint8_t sat, uint8_t val);
 
+// MMX
+void        rgb_matrix_set_sat(uint8_t sat);
+void        rgb_matrix_set_val(uint8_t val);
+uint16_t    rgb_matrix_get_hue(void);
+void        rgb_matrix_set_hue(uint16_t hue);
+
 #ifndef RGBLIGHT_ENABLE
 #    define rgblight_toggle() rgb_matrix_toggle()
 #    define rgblight_enable() rgb_matrix_enable()
